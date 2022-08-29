@@ -27,6 +27,9 @@ describe('CI sequence', () => {
   it('4. open a pull request and continue working', () => {
     expect(/.*pull\s+request.*/ig.test(fileContents)).toBe(true);
   });
+  it('does not contain the sneaky bug', () => {
+    expect(/.*sneaky\s+bug.*/gi.test(fileContents)).toBe(false);
+  });
   // TODO <= add the tests between these comments
 
 });
